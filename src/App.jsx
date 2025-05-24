@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+
+const videos = [
+  {
+    title: "How to use the coffee maker",
+    id: "1XrgeMFcvmauRIbyWIEyvLh0UaBUtAdPv",
+  },
+  {
+    title: "How to use the cooker",
+    id: "1r6_vonL9z38_3ucIOl-_H3914lr-LSPK",
+  },
+  {
+    title: "How to use the oven",
+    id: "1vIQCv1lKIvH-E_7jZeXjSIBsBvnFW_WP",
+  },
+  {
+    title: "How to use the steamer",
+    id: "1ZMErmduFe_ml6S9PjSSxvfk5sS6TxWFN",
+  },
+  {
+    title: "Kitchen tour",
+    id: "1o9opTDRvPPCbhLGfJOAS0F4dEsth59h3",
+  }
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <div className="header">
+        <img
+          src="https://drive.google.com/uc?export=view&id=12aga9MV_9zVjC4BBR7bbjV0rDJd_grqt"
+          alt="NaijaNomads Logo"
+          className="logo"
+        />
+        <h1>Learn, Discover, Experience</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="video-grid">
+        {videos.map((video, index) => (
+          <div key={index} className="video-card">
+            <h2>{video.title}</h2>
+            <iframe
+              src={`https://drive.google.com/file/d/${video.id}/preview`}
+              allow="autoplay"
+              allowFullScreen
+              title={video.title}
+              width="100%"
+              height="300"
+            ></iframe>
+          </div>
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <footer>
+        <p>&copy; {new Date().getFullYear()} NaijaNomads</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
