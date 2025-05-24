@@ -29,7 +29,7 @@ function App() {
       <div className="header">
         <img
           src="https://drive.google.com/uc?export=view&id=12aga9MV_9zVjC4BBR7bbjV0rDJd_grqt"
-          alt="NaijaNomads Logo"
+          alt="The Casa Nomads Company"
           className="logo"
         />
         <h1>Learn, Discover, Experience</h1>
@@ -52,7 +52,7 @@ function App() {
       </div>
 
       <footer>
-        <p>&copy; {new Date().getFullYear()} NaijaNomads</p>
+        <p>&copy; {new Date().getFullYear()} The Casa Nomads Company</p>
       </footer>
     </div>
   );
